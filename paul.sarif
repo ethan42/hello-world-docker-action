@@ -1,0 +1,369 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Mayhem for Code",
+          "rules": [
+            {
+              "id": "MI-108",
+              "name": "out-of-bounds-read",
+              "shortDescription": {
+                "text": "The software reads data past the end, or before the beginning, of the intended buffer."
+              }
+            },
+            {
+              "id": "MI-109",
+              "name": "out-of-bounds-write",
+              "shortDescription": {
+                "text": "The software writes data past the end, or before the beginning, of the intended buffer."
+              }
+            },
+            {
+              "id": "MI-101",
+              "name": "improper-input-validation",
+              "shortDescription": {
+                "text": "The software receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly."
+              }
+            }
+          ],
+          "version": "1.17.0",
+          "informationUri": "https://www.forallsecure.com/"
+        }
+      },
+      "results": [
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f617b0 in __memcpy_ssse3+0xe10 at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-390698 - Out-of-bounds Read"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "125",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-108"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f61759 in __memcpy_ssse3+0xdb9 at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-388755 - Out-of-bounds Write"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "787",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-109"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f61925 in __memcpy_ssse3+0xf85 at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-378216 - Out-of-bounds Read"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "125",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-108"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f6173b in __memcpy_ssse3+0xd9b at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-376999 - Out-of-bounds Write"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "787",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-109"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f617f4 in __memcpy_ssse3+0xe54 at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-376485 - Out-of-bounds Read"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "125",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-108"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f61728 in __memcpy_ssse3+0xd88 at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-376449 - Out-of-bounds Read"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "125",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-108"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f6174a in __memcpy_ssse3+0xdaa at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-376280 - Out-of-bounds Write"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "787",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-109"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7f616cd in __memcpy_ssse3+0xd2d at ??:0:0\n#1 0x55555556e04c in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:760:29\n#2 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#3 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#4 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#5 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#6 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#7 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-376247 - Out-of-bounds Read"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 29,
+                  "endLine": 760,
+                  "startColumn": 29,
+                  "startLine": 760
+                },
+                "artifactLocation": {
+                  "uri": "build/lighttpd-1.4.15/src/configfile.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "125",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-108"
+        },
+        {
+          "message": {
+            "markdown": "#0 0x7ffff7e3c7bb in __GI_raise at /build/glibc-vjB4T1/glibc-2.28/signal/../sysdeps/unix/sysv/linux/raise.c:51:1\n#1 0x7ffff7e27535 in __GI_abort at /build/glibc-vjB4T1/glibc-2.28/stdlib/abort.c:81:7\n#2 0x7ffff7e7e508 in __printf_fphex at /build/glibc-vjB4T1/glibc-2.28/stdio-common/../stdio-common/printf_fphex.c:233:2\n#3 0x7ffff7e84c1a in _IO_vfwprintf at /build/glibc-vjB4T1/glibc-2.28/stdio-common/vfprintf.c:1638:4\n#4 0x7ffff7e866fd in _IO_vfscanf_internal at /build/glibc-vjB4T1/glibc-2.28/stdio-common/vfscanf.c:1890:8\n#5 0x7ffff7e88d80 in _IO_vfscanf_internal at /build/glibc-vjB4T1/glibc-2.28/stdio-common/vfscanf.c:1834:5\n#6 0x7ffff7e89d4f in _IO_vfscanf_internal at /build/glibc-vjB4T1/glibc-2.28/stdio-common/vfscanf.c:2922:18\n#7 0x55555556de16 in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:733:14\n#8 0x55555556dffe in config_tokenizer at /build/lighttpd-1.4.15/src/configfile.c:755:11\n#9 0x55555556c1d4 in config_insert at /build/lighttpd-1.4.15/src/configfile.c:142:3\n#10 0x555555562da4 in server_init at /build/lighttpd-1.4.15/src/server.c:191:20\n#11 0x555555563c5c in main at /build/lighttpd-1.4.15/src/server.c:716:7\n#12 0x55555555e1fe in main at /build/lighttpd-1.4.15/src/server.c:1309:18\n#13 0x7ffff7e2909b in __libc_start_main at /build/glibc-vjB4T1/glibc-2.28/csu/../csu/libc-start.c:342:3\n#14 0x55555555b83a in _start+0x2a at ??:0:0\n",
+            "text": "TDID-375916 - Improper Input Validation"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "endColumn": 2,
+                  "endLine": 233,
+                  "startColumn": 2,
+                  "startLine": 233
+                },
+                "artifactLocation": {
+                  "uri": "build/glibc-vjB4T1/glibc-2.28/stdio-common/../stdio-common/printf_fphex.c"
+                }
+              }
+            }
+          ],
+          "taxa": [
+            {
+              "id": "20",
+              "toolComponent": {
+                "name": "CWE"
+              }
+            }
+          ],
+          "ruleId": "MI-101"
+        }
+      ],
+      "taxonomies": [
+        {
+          "name": "CWE",
+          "organization": "MITRE",
+          "taxa": [
+            {
+              "id": "125",
+              "help": {
+                "text": "The software reads data past the end, or before the beginning, of the intended buffer."
+              },
+              "name": "Out-of-bounds Read",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "The software reads data past the end, or before the beginning, of the intended buffer."
+              },
+              "shortDescription": {
+                "text": "The software reads data past the end, or before the beginning, of the intended buffer."
+              }
+            },
+            {
+              "id": "787",
+              "help": {
+                "text": "The software writes data past the end, or before the beginning, of the intended buffer."
+              },
+              "name": "Out-of-bounds Write",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "The software writes data past the end, or before the beginning, of the intended buffer."
+              },
+              "shortDescription": {
+                "text": "The software writes data past the end, or before the beginning, of the intended buffer."
+              }
+            },
+            {
+              "id": "20",
+              "help": {
+                "text": "The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly."
+              },
+              "name": "Improper Input Validation",
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly."
+              },
+              "shortDescription": {
+                "text": "The product receives input or data, but it does not validate or incorrectly validates that the input has the properties that are required to process the data safely and correctly."
+              }
+            }
+          ],
+          "shortDescription": {
+            "text": "The MITRE Common Weakness Enumeration"
+          }
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Documents/CommitteeSpecifications/2.1.0/sarif-schema-2.1.0.json"
+}
