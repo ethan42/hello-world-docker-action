@@ -19,6 +19,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: Print env
+        run: printenv
 
       - name: Upload SARIF file(s)
         uses: github/codeql-action/upload-sarif@v1
