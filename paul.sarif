@@ -24,6 +24,7 @@
       "results": [
         {
           "message": {
+            "markdown": "title",
             "text": "TDID-5099 - Uncategorized Defect"
           },
           "locations": [
@@ -36,7 +37,7 @@
                   "startLine": 1
                 },
                 "artifactLocation": {
-                  "uri": ""
+                  "uri": "hello.c"
                 }
               }
             }
