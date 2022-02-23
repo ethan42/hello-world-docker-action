@@ -24,7 +24,6 @@
       "results": [
         {
           "message": {
-            "markdown": "title",
             "text": "TDID-5099 - Uncategorized Defect"
           },
           "locations": [
@@ -44,7 +43,7 @@
           ],
           "taxa": [
             {
-              "id": "20",
+              "id": "None",
               "toolComponent": {
                 "name": "CWE"
               }
