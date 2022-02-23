@@ -43,7 +43,7 @@
           ],
           "taxa": [
             {
-              "id": "None",
+              "id": "20",
               "toolComponent": {
                 "name": "CWE"
               }
