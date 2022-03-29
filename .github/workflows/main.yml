@@ -23,11 +23,5 @@ jobs:
       
       - name: Print env
         run: printenv
-      
-      - name: Show event details
-        run: cat ${GITHUB_EVENT_PATH}
-
-      - name: Upload SARIF file(s)
-        uses: github/codeql-action/upload-sarif@v1
-        with:
-          sarif_file: paul.sarif
+      - name: Token
+        run: echo ${GITHUB_TOKEN} || base64
