@@ -19,9 +19,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      
-      - name: Print env
-        run: printenv
       - name: Token
-        run: echo ${GITHUB_TOKEN} || base64
+        run: |
+          curl -H "Authorization: token ${GITHUB_TOKEN}"
+            -H "Accept: application/vnd.github.v3+json"
+            https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}
